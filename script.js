@@ -87,13 +87,17 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') lightboxNext.click();
 });
 
-// Contact Form
+// Contact Form - Redirect to Instagram DM
 document.getElementById('contactForm').addEventListener('submit', (e) => {
     e.preventDefault();
+    const name = document.getElementById('name').value;
+    const message = document.getElementById('message').value;
+    const instagramURL = `https://ig.me/m/moon.litareej/?text=${encodeURIComponent(`Hi Areej! I'm ${name}. ${message}`)}`;
+    window.open(instagramURL, '_blank');
     const btn = e.target.querySelector('.btn');
     const originalHTML = btn.innerHTML;
-    btn.innerHTML = '<span>Message Sent!</span> <i class="fas fa-check"></i>';
-    btn.style.background = 'linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%)';
+    btn.innerHTML = '<span>Opening Instagram...</span> <i class="fas fa-check"></i>';
+    btn.style.background = 'linear-gradient(135deg, #E1306C 0%, #833AB4 100%)';
     setTimeout(() => {
         btn.innerHTML = originalHTML;
         btn.style.background = '';
