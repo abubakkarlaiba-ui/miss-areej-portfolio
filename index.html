@@ -6,21 +6,26 @@
     <title>Miss Areej</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#" class="nav-logo">Miss Areej</a>
+            <a href="#" class="nav-logo">
+                <span class="logo-icon"><i class="fas fa-heart"></i></span>
+                Miss Areej
+            </a>
             <div class="nav-links" id="navLinks">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#quotes" class="nav-link">Quotes</a>
                 <a href="#interests" class="nav-link">Interests</a>
+                <a href="#lifestyle" class="nav-link">Lifestyle</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
             <button class="hamburger" id="hamburger">
@@ -33,19 +38,69 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
         <div class="hero-container">
             <div class="hero-content">
-                <p class="hero-subtitle">Hello, I am</p>
-                <h1 class="hero-title">Miss Areej</h1>
-                <p class="hero-description">A beautiful soul with a passion for life, art, and endless adventures.</p>
+                <div class="hero-badge"><i class="fas fa-sparkles"></i> Welcome to my world</div>
+                <h1 class="hero-title">Hello, I am <span class="highlight">Miss Areej</span></h1>
+                <p class="hero-description">A beautiful soul with a passion for life, art, and endless adventures. I believe in creating beautiful moments and spreading love wherever I go.</p>
                 <div class="hero-buttons">
-                    <a href="#about" class="btn btn-primary">Discover More</a>
-                    <a href="#contact" class="btn btn-outline">Get in Touch</a>
+                    <a href="#about" class="btn btn-primary"><i class="fas fa-heart"></i> Discover More</a>
+                    <a href="#contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Get in Touch</a>
+                </div>
+                <div class="hero-social">
+                    <a href="#" class="hero-social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hero-social-link"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" class="hero-social-link"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="hero-social-link"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
             <div class="hero-image">
-                <div class="image-wrapper">
-                    <img src="images/hero.svg" alt="Miss Areej">
+                <div class="image-frame">
+                    <div class="frame-decoration frame-deco-1"></div>
+                    <div class="frame-decoration frame-deco-2"></div>
+                    <div class="image-wrapper">
+                        <img src="images/hero.svg" alt="Miss Areej">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <a href="#about" class="scroll-btn">
+                <span class="scroll-text">Scroll Down</span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-camera"></i></div>
+                    <span class="stat-number">150+</span>
+                    <span class="stat-label">Photos Taken</span>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <span class="stat-number">25+</span>
+                    <span class="stat-label">Places Visited</span>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-heart"></i></div>
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-label">Smiles Shared</span>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-star"></i></div>
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Memories Made</span>
                 </div>
             </div>
         </div>
@@ -55,70 +110,108 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">About</span>
+                <span class="section-tag"><i class="fas fa-heart"></i> About</span>
                 <h2 class="section-title">Know Me Better</h2>
+                <p class="section-subtitle">A little bit about who I am and what I love</p>
             </div>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="images/about.svg" alt="About Miss Areej">
+                    <div class="about-img-wrapper">
+                        <img src="images/about.svg" alt="About Miss Areej">
+                    </div>
+                    <div class="about-exp">
+                        <span class="exp-number">100%</span>
+                        <span class="exp-text">Positive Energy</span>
+                    </div>
                 </div>
                 <div class="about-text">
                     <h3>Hi there! <span class="wave">&#128075;</span></h3>
-                    <p>Welcome to my little corner of the internet. I am someone who finds beauty in everyday moments and believes in living life to the fullest.</p>
+                    <p class="about-intro">Welcome to my little corner of the internet. I am someone who finds beauty in everyday moments and believes in living life to the fullest.</p>
                     <p>Every day is a new opportunity to create beautiful memories, explore new places, and connect with amazing people. I am passionate about art, nature, music, and all things beautiful.</p>
+                    <p>I believe that life is not about the number of breaths we take, but the moments that take our breath away. Here, I share my journey, my passions, and the little things that make me smile.</p>
+                    <div class="about-details">
+                        <div class="detail">
+                            <i class="fas fa-heart"></i>
+                            <div>
+                                <strong>Passion</strong>
+                                <span>Art & Creativity</span>
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-globe"></i>
+                            <div>
+                                <strong>Dream</strong>
+                                <span>Explore the World</span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="about-tags">
-                        <span class="tag">Dreamer</span>
-                        <span class="tag">Explorer</span>
-                        <span class="tag">Creative</span>
-                        <span class="tag">Nature Lover</span>
+                        <span class="tag"><i class="fas fa-star"></i> Dreamer</span>
+                        <span class="tag"><i class="fas fa-compass"></i> Explorer</span>
+                        <span class="tag"><i class="fas fa-palette"></i> Creative</span>
+                        <span class="tag"><i class="fas fa-leaf"></i> Nature Lover</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Decorative Divider -->
+    <div class="section-divider">
+        <div class="divider-line"></div>
+        <div class="divider-icon"><i class="fas fa-heart"></i></div>
+        <div class="divider-line"></div>
+    </div>
+
     <!-- Gallery Section -->
     <section id="gallery" class="gallery">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Gallery</span>
+                <span class="section-tag"><i class="fas fa-images"></i> Gallery</span>
                 <h2 class="section-title">My Moments</h2>
+                <p class="section-subtitle">A collection of my favorite memories and beautiful moments</p>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="images/gallery-1.svg" alt="Gallery 1">
                     <div class="gallery-overlay">
                         <i class="fas fa-expand"></i>
+                        <span>View Photo</span>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/gallery-2.svg" alt="Gallery 2">
                     <div class="gallery-overlay">
                         <i class="fas fa-expand"></i>
+                        <span>View Photo</span>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/gallery-3.svg" alt="Gallery 3">
                     <div class="gallery-overlay">
                         <i class="fas fa-expand"></i>
+                        <span>View Photo</span>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/gallery-4.svg" alt="Gallery 4">
                     <div class="gallery-overlay">
                         <i class="fas fa-expand"></i>
+                        <span>View Photo</span>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/gallery-5.svg" alt="Gallery 5">
                     <div class="gallery-overlay">
                         <i class="fas fa-expand"></i>
+                        <span>View Photo</span>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/gallery-6.svg" alt="Gallery 6">
                     <div class="gallery-overlay">
                         <i class="fas fa-expand"></i>
+                        <span>View Photo</span>
                     </div>
                 </div>
             </div>
@@ -133,43 +226,115 @@
         <img src="" alt="Gallery Image" class="lightbox-img" id="lightboxImg">
     </div>
 
+    <!-- Quotes Section -->
+    <section id="quotes" class="quotes">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-quote-left"></i> Quotes</span>
+                <h2 class="section-title">Words I Live By</h2>
+                <p class="section-subtitle">Inspirational quotes that keep me going</p>
+            </div>
+            <div class="quotes-grid">
+                <div class="quote-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="quote-text">She believed she could, so she did.</p>
+                    <span class="quote-author">R.S. Grey</span>
+                </div>
+                <div class="quote-card featured">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="quote-text">In a world where you can be anything, be kind.</p>
+                    <span class="quote-author">Jennifer Dukes Lee</span>
+                </div>
+                <div class="quote-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="quote-text">She turned her can'ts into cans and her dreams into plans.</p>
+                    <span class="quote-author">Kobi Yamada</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Interests Section -->
     <section id="interests" class="interests">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Interests</span>
+                <span class="section-tag"><i class="fas fa-heart"></i> Interests</span>
                 <h2 class="section-title">What I Love</h2>
+                <p class="section-subtitle">The things that make my heart happy</p>
             </div>
             <div class="interests-grid">
                 <div class="interest-card">
-                    <div class="interest-icon"><i class="fas fa-camera"></i></div>
+                    <div class="interest-icon"><i class="fas fa-camera-retro"></i></div>
                     <h3>Photography</h3>
-                    <p>Capturing beautiful moments and preserving memories forever.</p>
+                    <p>Capturing beautiful moments and preserving memories that last forever through my lens.</p>
+                    <div class="interest-line"></div>
                 </div>
                 <div class="interest-card">
                     <div class="interest-icon"><i class="fas fa-music"></i></div>
                     <h3>Music</h3>
-                    <p>Every song tells a story, and music is the soundtrack of my life.</p>
+                    <p>Every song tells a story, and music is the beautiful soundtrack of my life's journey.</p>
+                    <div class="interest-line"></div>
                 </div>
                 <div class="interest-card">
-                    <div class="interest-icon"><i class="fas fa-plane"></i></div>
+                    <div class="interest-icon"><i class="fas fa-plane-departure"></i></div>
                     <h3>Travel</h3>
-                    <p>Exploring new places and experiencing different cultures.</p>
+                    <p>Exploring new places, experiencing different cultures, and collecting memories.</p>
+                    <div class="interest-line"></div>
                 </div>
                 <div class="interest-card">
-                    <div class="interest-icon"><i class="fas fa-book"></i></div>
+                    <div class="interest-icon"><i class="fas fa-book-reader"></i></div>
                     <h3>Reading</h3>
-                    <p>Losing myself in stories that inspire and transport me.</p>
+                    <p>Losing myself in stories that inspire, educate, and transport me to magical worlds.</p>
+                    <div class="interest-line"></div>
                 </div>
                 <div class="interest-card">
                     <div class="interest-icon"><i class="fas fa-palette"></i></div>
-                    <h3>Art</h3>
-                    <p>Expressing creativity through various art forms.</p>
+                    <h3>Art & Design</h3>
+                    <p>Expressing creativity through various art forms and finding beauty in everything.</p>
+                    <div class="interest-line"></div>
                 </div>
                 <div class="interest-card">
-                    <div class="interest-icon"><i class="fas fa-leaf"></i></div>
+                    <div class="interest-icon"><i class="fas fa-seedling"></i></div>
                     <h3>Nature</h3>
-                    <p>Finding peace and inspiration in the beauty of nature.</p>
+                    <p>Finding peace, inspiration, and tranquility in the embrace of natural beauty.</p>
+                    <div class="interest-line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lifestyle Section -->
+    <section id="lifestyle" class="lifestyle">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-heart"></i> Lifestyle</span>
+                <h2 class="section-title">My Daily Vibes</h2>
+                <p class="section-subtitle">The little things that make every day special</p>
+            </div>
+            <div class="lifestyle-grid">
+                <div class="lifestyle-card">
+                    <div class="lifestyle-number">01</div>
+                    <div class="lifestyle-icon"><i class="fas fa-sun"></i></div>
+                    <h3>Morning Rituals</h3>
+                    <p>Starting each day with gratitude, a warm cup of tea, and beautiful intentions for the day ahead.</p>
+                </div>
+                <div class="lifestyle-card">
+                    <div class="lifestyle-number">02</div>
+                    <div class="lifestyle-icon"><i class="fas fa-coffee"></i></div>
+                    <h3>Coffee & Books</h3>
+                    <p>My perfect afternoon: a cozy corner, a good book, and a warm cup of coffee to sip.</p>
+                </div>
+                <div class="lifestyle-card">
+                    <div class="lifestyle-number">03</div>
+                    <div class="lifestyle-icon"><i class="fas fa-spa"></i></div>
+                    <h3>Self Care</h3>
+                    <p>Taking time for myself to recharge, reflect, and nurture my mind, body, and soul.</p>
+                </div>
+                <div class="lifestyle-card">
+                    <div class="lifestyle-number">04</div>
+                    <div class="lifestyle-icon"><i class="fas fa-users"></i></div>
+                    <h3>Family & Friends</h3>
+                    <p>Cherishing moments with loved ones and creating beautiful memories together.</p>
                 </div>
             </div>
         </div>
@@ -179,21 +344,28 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Contact</span>
+                <span class="section-tag"><i class="fas fa-envelope"></i> Contact</span>
                 <h2 class="section-title">Say Hello</h2>
+                <p class="section-subtitle">I would love to hear from you</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Let's Connect!</h3>
-                    <p>I would love to hear from you. Whether you want to say hello or just share a kind word.</p>
+                    <h3>Let's Connect! <span class="wave">&#128075;</span></h3>
+                    <p>Whether you want to say hello, share a kind word, or just connect - I am always happy to hear from you. Feel free to reach out anytime!</p>
                     <div class="contact-details">
                         <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>hello@missareej.com</span>
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <strong>Email</strong>
+                                <span>hello@missareej.com</span>
+                            </div>
                         </div>
                         <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Beautiful World</span>
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <strong>Location</strong>
+                                <span>Beautiful World</span>
+                            </div>
                         </div>
                     </div>
                     <div class="social-links">
@@ -204,19 +376,27 @@
                     </div>
                 </div>
                 <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" id="name" required>
-                        <label>Your Name</label>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="name" required placeholder=" ">
+                            <label>Your Name</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" required placeholder=" ">
+                            <label>Your Email</label>
+                            <div class="form-line"></div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" required>
-                        <label>Your Email</label>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" rows="5" required></textarea>
+                        <textarea id="message" rows="5" required placeholder=" "></textarea>
                         <label>Your Message</label>
+                        <div class="form-line"></div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-full">Send Message <i class="fas fa-paper-plane"></i></button>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
                 </form>
             </div>
         </div>
@@ -224,18 +404,43 @@
 
     <!-- Footer -->
     <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,50 C150,100 350,0 500,50 C650,100 850,0 1000,50 C1150,100 1350,0 1440,50 L1440,0 L0,0 Z" fill="currentColor"></path>
+            </svg>
+        </div>
         <div class="container">
-            <a href="#" class="footer-logo">Miss Areej</a>
-            <div class="footer-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#interests">Interests</a>
-                <a href="#contact">Contact</a>
+            <div class="footer-content">
+                <a href="#" class="footer-logo">
+                    <i class="fas fa-heart"></i> Miss Areej
+                </a>
+                <p class="footer-tagline">A beautiful soul with a passion for life</p>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#quotes">Quotes</a>
+                    <a href="#interests">Interests</a>
+                    <a href="#lifestyle">Lifestyle</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <div class="footer-divider"></div>
+                <p class="footer-text">Made with <i class="fas fa-heart"></i> for Miss Areej</p>
+                <p class="footer-copy">&copy; 2026 Miss Areej. All Rights Reserved.</p>
             </div>
-            <p class="footer-text">Made with <i class="fas fa-heart"></i> for Miss Areej</p>
         </div>
     </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>

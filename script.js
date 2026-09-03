@@ -1,3 +1,9 @@
+// Navbar Scroll Effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
 // Mobile Menu
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
@@ -21,7 +27,7 @@ const navLinkElements = document.querySelectorAll('.nav-link');
 window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
+        const sectionTop = section.offsetTop - 120;
         if (scrollY >= sectionTop) {
             current = section.getAttribute('id');
         }
@@ -86,11 +92,54 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
     e.preventDefault();
     const btn = e.target.querySelector('.btn');
     const originalHTML = btn.innerHTML;
-    btn.innerHTML = 'Sent! <i class="fas fa-check"></i>';
+    btn.innerHTML = '<span>Message Sent!</span> <i class="fas fa-check"></i>';
     btn.style.background = '#4CAF50';
+    btn.style.boxShadow = '0 4px 16px rgba(76, 175, 80, 0.3)';
     setTimeout(() => {
         btn.innerHTML = originalHTML;
         btn.style.background = '';
+        btn.style.boxShadow = '';
         e.target.reset();
     }, 2500);
 });
+
+// Back to Top
+const backToTop = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('visible', window.scrollY > 500);
+});
+
+backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Scroll Reveal Animation
+const revealElements = document.querySelectorAll('.stat-item, .about-content, .gallery-item, .quote-card, .interest-card, .lifestyle-card, .contact-content');
+
+const revealOnScroll = () => {
+    revealElements.forEach(el => {
+        const elTop = el.getBoundingClientRect().top;
+        if (elTop < window.innerHeight - 80) {
+            el.classList.add('revealed');
+        }
+    });
+};
+
+// Add reveal styles
+const style = document.createElement('style');
+style.textContent = `
+    .stat-item, .about-content, .gallery-item, .quote-card, .interest-card, .lifestyle-card, .contact-content {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .revealed {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+`;
+document.head.appendChild(style);
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
