@@ -1,27 +1,27 @@
 /* ===== Premium Variables ===== */
 :root {
-    --primary: #F0F7FF;
-    --primary-soft: #E8F2FE;
-    --secondary: #FAFCFF;
-    --accent: #2563EB;
-    --accent-light: #3B82F6;
-    --accent-hover: #1D4ED8;
-    --accent-glow: rgba(37, 99, 235, 0.15);
-    --accent-glass: rgba(37, 99, 235, 0.06);
-    --text: #1A2332;
-    --text-secondary: #4A5568;
-    --text-muted: #8896A8;
+    --primary: #FDFBF7;
+    --primary-soft: #F5F0E8;
+    --secondary: #FAF7F2;
+    --accent: #C86D51;
+    --accent-light: #D4846A;
+    --accent-hover: #B55A3F;
+    --accent-glow: rgba(200, 109, 81, 0.15);
+    --accent-glass: rgba(200, 109, 81, 0.06);
+    --text: #2C221E;
+    --text-secondary: #5A4A42;
+    --text-muted: #9A8A80;
     --white: #FFFFFF;
-    --border: rgba(37, 99, 235, 0.08);
-    --border-light: rgba(0, 0, 0, 0.04);
+    --border: rgba(200, 109, 81, 0.1);
+    --border-light: rgba(0, 0, 0, 0.05);
     --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.04);
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
     --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 24px 64px rgba(0, 0, 0, 0.12);
-    --shadow-accent: 0 8px 32px rgba(37, 99, 235, 0.2);
-    --shadow-accent-lg: 0 16px 48px rgba(37, 99, 235, 0.25);
+    --shadow-accent: 0 8px 32px rgba(200, 109, 81, 0.2);
+    --shadow-accent-lg: 0 16px 48px rgba(200, 109, 81, 0.25);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-smooth: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
     --font-heading: 'Playfair Display', serif;
@@ -159,7 +159,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(160deg, var(--primary) 0%, var(--secondary) 40%, #F5FAFF 100%);
+    background: linear-gradient(160deg, var(--primary) 0%, var(--secondary) 40%, #F8F4EE 100%);
     padding: 100px 28px 60px;
     position: relative;
     overflow: hidden;
@@ -715,7 +715,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 .gallery-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.88) 0%, rgba(29, 78, 216, 0.88) 100%);
+    background: linear-gradient(135deg, rgba(200, 109, 81, 0.88) 0%, rgba(181, 90, 63, 0.88) 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -866,7 +866,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 
 .quote-card.featured:hover {
     transform: scale(1.04) translateY(-6px);
-    box-shadow: 0 20px 60px rgba(37, 99, 235, 0.35);
+    box-shadow: 0 20px 60px rgba(200, 109, 81, 0.35);
 }
 
 .quote-icon {
