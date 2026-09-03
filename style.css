@@ -1253,7 +1253,6 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 }
 
 .footer-wave {
-    color: var(--text);
     overflow: hidden;
     position: relative;
     margin-top: -1px;
@@ -1262,41 +1261,41 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 .footer-wave svg {
     display: block;
     width: 200%;
-    height: 80px;
+    height: 100px;
 }
 
-.footer-wave-path {
-    fill: currentColor;
+.footer-wave svg path {
+    fill: var(--text);
 }
 
-.wave-anim-1 {
-    animation: waveMove1 8s ease-in-out infinite;
-    opacity: 0.9;
+.wave-anim {
+    animation: waveMove 4s ease-in-out infinite alternate;
 }
 
-.wave-anim-2 {
-    animation: waveMove2 6s ease-in-out infinite;
-    opacity: 0.5;
-}
-
-.wave-anim-3 {
-    animation: waveMove3 10s ease-in-out infinite;
+.wave-back {
     opacity: 0.3;
+    animation-duration: 7s;
 }
 
-@keyframes waveMove1 {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(-25%); }
+.wave-mid {
+    opacity: 0.5;
+    animation-duration: 5s;
+    animation-delay: -1s;
 }
 
-@keyframes waveMove2 {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(-20%); }
+.wave-front {
+    opacity: 0.9;
+    animation-duration: 3.5s;
+    animation-delay: -2s;
 }
 
-@keyframes waveMove3 {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(-30%); }
+@keyframes waveMove {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        transform: translateX(-50%) translateY(-3px);
+    }
 }
 
 .footer-content {
