@@ -93,12 +93,10 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
     const btn = e.target.querySelector('.btn');
     const originalHTML = btn.innerHTML;
     btn.innerHTML = '<span>Message Sent!</span> <i class="fas fa-check"></i>';
-    btn.style.background = '#4CAF50';
-    btn.style.boxShadow = '0 4px 16px rgba(76, 175, 80, 0.3)';
+    btn.style.background = 'linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%)';
     setTimeout(() => {
         btn.innerHTML = originalHTML;
         btn.style.background = '';
-        btn.style.boxShadow = '';
         e.target.reset();
     }, 2500);
 });
@@ -131,8 +129,8 @@ const style = document.createElement('style');
 style.textContent = `
     .stat-item, .about-content, .gallery-item, .quote-card, .interest-card, .lifestyle-card, .contact-content {
         opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
+        transform: translateY(24px);
+        transition: opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1), transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     }
     .revealed {
         opacity: 1 !important;
