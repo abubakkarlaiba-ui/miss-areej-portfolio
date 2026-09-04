@@ -18,59 +18,59 @@ html {
 .floating-orb {
     position: absolute;
     border-radius: 50%;
-    filter: blur(60px);
-    opacity: 0.15;
+    filter: blur(80px);
+    opacity: 0.25;
     animation: floatOrb 20s ease-in-out infinite;
 }
 
 .floating-orb:nth-child(1) {
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     background: linear-gradient(135deg, #C86D51, #D4846A);
-    top: 10%;
-    left: -10%;
+    top: 5%;
+    left: -5%;
     animation-delay: 0s;
-    animation-duration: 25s;
+    animation-duration: 18s;
 }
 
 .floating-orb:nth-child(2) {
-    width: 350px;
-    height: 350px;
-    background: linear-gradient(135deg, #D4846A, #E8A88C);
-    top: 50%;
-    right: -10%;
-    animation-delay: -5s;
+    width: 450px;
+    height: 450px;
+    background: linear-gradient(135deg, #E8A88C, #F5C4A8);
+    top: 40%;
+    right: -5%;
+    animation-delay: -4s;
     animation-duration: 22s;
 }
 
 .floating-orb:nth-child(3) {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     background: linear-gradient(135deg, #C86D51, #B55A3F);
-    bottom: 10%;
-    left: 30%;
-    animation-delay: -10s;
-    animation-duration: 28s;
-}
-
-.floating-orb:nth-child(4) {
-    width: 250px;
-    height: 250px;
-    background: linear-gradient(135deg, #E8A88C, #D4846A);
-    top: 30%;
-    left: 50%;
-    animation-delay: -15s;
+    bottom: 5%;
+    left: 25%;
+    animation-delay: -8s;
     animation-duration: 20s;
 }
 
-.floating-orb:nth-child(5) {
-    width: 200px;
-    height: 200px;
-    background: linear-gradient(135deg, #D4846A, #C86D51);
-    top: 70%;
-    left: 10%;
-    animation-delay: -8s;
+.floating-orb:nth-child(4) {
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(135deg, #F5C4A8, #D4846A);
+    top: 20%;
+    left: 45%;
+    animation-delay: -12s;
     animation-duration: 24s;
+}
+
+.floating-orb:nth-child(5) {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #D4846A, #C86D51);
+    top: 65%;
+    left: 5%;
+    animation-delay: -6s;
+    animation-duration: 19s;
 }
 
 @keyframes floatOrb {
@@ -78,43 +78,110 @@ html {
         transform: translate(0, 0) scale(1);
     }
     25% {
-        transform: translate(50px, -50px) scale(1.1);
+        transform: translate(80px, -60px) scale(1.15);
     }
     50% {
-        transform: translate(-30px, 30px) scale(0.95);
+        transform: translate(-50px, 50px) scale(0.9);
     }
     75% {
-        transform: translate(40px, 20px) scale(1.05);
+        transform: translate(60px, 30px) scale(1.1);
     }
 }
 
-.sparkle-dot {
+/* Floating Hearts */
+.floating-heart {
     position: absolute;
-    width: 4px;
-    height: 4px;
-    background: #C86D51;
-    border-radius: 50%;
+    font-size: 20px;
     opacity: 0;
-    animation: sparkle 3s ease-in-out infinite;
+    animation: floatHeart 8s ease-in-out infinite;
+    color: #C86D51;
 }
 
-.sparkle-dot:nth-child(6) { top: 20%; left: 15%; animation-delay: 0s; }
-.sparkle-dot:nth-child(7) { top: 40%; left: 80%; animation-delay: 0.5s; }
-.sparkle-dot:nth-child(8) { top: 60%; left: 25%; animation-delay: 1s; }
-.sparkle-dot:nth-child(9) { top: 80%; left: 70%; animation-delay: 1.5s; }
-.sparkle-dot:nth-child(10) { top: 30%; left: 60%; animation-delay: 2s; }
-.sparkle-dot:nth-child(11) { top: 70%; left: 45%; animation-delay: 0.3s; }
-.sparkle-dot:nth-child(12) { top: 15%; left: 55%; animation-delay: 0.8s; }
-.sparkle-dot:nth-child(13) { top: 85%; left: 35%; animation-delay: 1.3s; }
+.floating-heart:nth-child(6) { left: 10%; animation-delay: 0s; font-size: 16px; }
+.floating-heart:nth-child(7) { left: 25%; animation-delay: 1.5s; font-size: 14px; }
+.floating-heart:nth-child(8) { left: 40%; animation-delay: 3s; font-size: 18px; }
+.floating-heart:nth-child(9) { left: 55%; animation-delay: 0.8s; font-size: 12px; }
+.floating-heart:nth-child(10) { left: 70%; animation-delay: 2.3s; font-size: 15px; }
+.floating-heart:nth-child(11) { left: 85%; animation-delay: 4s; font-size: 17px; }
+.floating-heart:nth-child(12) { left: 15%; animation-delay: 5.5s; font-size: 13px; }
+.floating-heart:nth-child(13) { left: 60%; animation-delay: 6.2s; font-size: 16px; }
+.floating-heart:nth-child(14) { left: 35%; animation-delay: 7s; font-size: 14px; }
+.floating-heart:nth-child(15) { left: 80%; animation-delay: 2s; font-size: 15px; }
 
-@keyframes sparkle {
-    0%, 100% {
+@keyframes floatHeart {
+    0% {
+        bottom: -30px;
         opacity: 0;
-        transform: scale(0);
+        transform: rotate(-15deg) scale(0.5);
+    }
+    10% {
+        opacity: 0.4;
     }
     50% {
         opacity: 0.6;
-        transform: scale(1);
+    }
+    90% {
+        opacity: 0.2;
+    }
+    100% {
+        bottom: 110%;
+        opacity: 0;
+        transform: rotate(15deg) scale(1);
+    }
+}
+
+/* Sparkle Stars */
+.sparkle-star {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #C86D51;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    opacity: 0;
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+.sparkle-star:nth-child(16) { top: 15%; left: 8%; animation-delay: 0s; }
+.sparkle-star:nth-child(17) { top: 25%; left: 92%; animation-delay: 0.4s; }
+.sparkle-star:nth-child(18) { top: 45%; left: 5%; animation-delay: 0.8s; }
+.sparkle-star:nth-child(19) { top: 65%; left: 88%; animation-delay: 1.2s; }
+.sparkle-star:nth-child(20) { top: 85%; left: 12%; animation-delay: 1.6s; }
+.sparkle-star:nth-child(21) { top: 35%; left: 75%; animation-delay: 0.2s; }
+.sparkle-star:nth-child(22) { top: 75%; left: 30%; animation-delay: 0.6s; }
+.sparkle-star:nth-child(23) { top: 10%; left: 60%; animation-delay: 1s; }
+.sparkle-star:nth-child(24) { top: 55%; left: 45%; animation-delay: 1.4s; }
+.sparkle-star:nth-child(25) { top: 90%; left: 70%; animation-delay: 1.8s; }
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1) rotate(180deg);
+    }
+}
+
+/* Gentle Wave Lines */
+.wave-line {
+    position: absolute;
+    width: 200%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(200, 109, 81, 0.15), transparent);
+    animation: waveMove 15s linear infinite;
+}
+
+.wave-line:nth-child(26) { top: 20%; animation-delay: 0s; }
+.wave-line:nth-child(27) { top: 50%; animation-delay: -5s; }
+.wave-line:nth-child(28) { top: 80%; animation-delay: -10s; }
+
+@keyframes waveMove {
+    0% {
+        transform: translateX(-50%) rotate(-5deg);
+    }
+    100% {
+        transform: translateX(0%) rotate(-5deg);
     }
 }
 
