@@ -6,17 +6,19 @@ window.addEventListener('scroll', () => {
 
 // Mobile Menu
 const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
+const mobileMenu = document.getElementById('mobileMenu');
 
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
 });
 
-document.querySelectorAll('.nav-link').forEach(link => {
+document.querySelectorAll('.mobile-menu a').forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
     });
 });
 
