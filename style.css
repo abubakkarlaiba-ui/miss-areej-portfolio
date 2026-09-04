@@ -1,11 +1,15 @@
 /* ===== Animated Background ===== */
+html {
+    background: #FDFBF7;
+}
+
 #bgCanvas {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 0;
     pointer-events: none;
 }
 
@@ -57,7 +61,7 @@ html {
 body {
     font-family: var(--font-body);
     color: var(--text);
-    background: var(--white);
+    background: transparent;
     line-height: 1.7;
     overflow-x: hidden;
 }
@@ -170,7 +174,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(160deg, var(--primary) 0%, var(--secondary) 40%, #F8F4EE 100%);
+    background: transparent;
     padding: 100px 28px 60px;
     position: relative;
     overflow: hidden;
