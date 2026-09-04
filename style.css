@@ -174,7 +174,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: transparent;
+    background: linear-gradient(160deg, rgba(253, 251, 247, 0.9) 0%, rgba(245, 240, 232, 0.85) 40%, rgba(248, 244, 238, 0.8) 100%);
     padding: 100px 28px 60px;
     position: relative;
     overflow: hidden;

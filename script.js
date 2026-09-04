@@ -146,11 +146,9 @@ document.head.appendChild(style);
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
 
-// ===== Beautiful Background Animation =====
+// ===== Elegant Professional Background Animation =====
 const canvas = document.getElementById('bgCanvas');
 const ctx = canvas.getContext('2d');
-let particles = [];
-let mouseX = 0, mouseY = 0;
 
 function resizeCanvas() {
     canvas.width = window.innerWidth;
@@ -159,131 +157,123 @@ function resizeCanvas() {
 resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-});
+const orbs = [];
+const bokeh = [];
+const sparkle = [];
 
-class Particle {
-    constructor() {
-        this.reset();
-    }
-    reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 4 + 1;
-        this.speedX = (Math.random() - 0.5) * 0.8;
-        this.speedY = (Math.random() - 0.5) * 0.8;
-        this.opacity = Math.random() * 0.5 + 0.1;
-        this.color = Math.random() > 0.5 ? 'rgba(200, 109, 81,' : 'rgba(212, 132, 106,';
-        this.angle = Math.random() * Math.PI * 2;
-        this.spin = Math.random() * 0.02 - 0.01;
-        this.pulse = Math.random() * 0.02;
-        this.grow = true;
-    }
-    update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        this.angle += this.spin;
+for (let i = 0; i < 5; i++) {
+    orbs.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 200 + 150,
+        speedX: (Math.random() - 0.5) * 0.2,
+        speedY: (Math.random() - 0.5) * 0.2,
+        hue: Math.random() * 30 + 15
+    });
+}
 
-        if (this.grow) {
-            this.opacity += this.pulse;
-            if (this.opacity >= 0.6) this.grow = false;
-        } else {
-            this.opacity -= this.pulse;
-            if (this.opacity <= 0.1) this.grow = true;
-        }
+for (let i = 0; i < 25; i++) {
+    bokeh.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 40 + 10,
+        speedX: (Math.random() - 0.5) * 0.15,
+        speedY: -Math.random() * 0.3 - 0.05,
+        opacity: Math.random() * 0.04 + 0.01,
+        pulse: Math.random() * 0.0005 + 0.0002,
+        phase: Math.random() * Math.PI * 2
+    });
+}
 
-        const dx = mouseX - this.x;
-        const dy = mouseY - this.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 150) {
-            this.x -= dx * 0.01;
-            this.y -= dy * 0.01;
-        }
+for (let i = 0; i < 12; i++) {
+    sparkle.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 2 + 0.5,
+        speedX: (Math.random() - 0.5) * 0.1,
+        speedY: (Math.random() - 0.5) * 0.1,
+        opacity: 0,
+        maxOpacity: Math.random() * 0.4 + 0.1,
+        phase: Math.random() * Math.PI * 2,
+        speed: Math.random() * 0.01 + 0.005
+    });
+}
 
-        if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
-            this.reset();
-        }
-    }
-    draw() {
-        ctx.save();
-        ctx.translate(this.x, this.y);
-        ctx.rotate(this.angle);
+let time = 0;
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    time += 0.005;
+
+    orbs.forEach(orb => {
+        orb.x += orb.speedX;
+        orb.y += orb.speedY;
+        if (orb.x < -orb.radius) orb.x = canvas.width + orb.radius;
+        if (orb.x > canvas.width + orb.radius) orb.x = -orb.radius;
+        if (orb.y < -orb.radius) orb.y = canvas.height + orb.radius;
+        if (orb.y > canvas.height + orb.radius) orb.y = -orb.radius;
+
+        const gradient = ctx.createRadialGradient(orb.x, orb.y, 0, orb.x, orb.y, orb.radius);
+        gradient.addColorStop(0, `hsla(${orb.hue}, 50%, 80%, 0.03)`);
+        gradient.addColorStop(0.5, `hsla(${orb.hue}, 45%, 75%, 0.015)`);
+        gradient.addColorStop(1, `hsla(${orb.hue}, 40%, 70%, 0)`);
+        ctx.fillStyle = gradient;
         ctx.beginPath();
-        ctx.arc(0, 0, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = this.color + this.opacity + ')';
-        ctx.shadowBlur = 20;
-        ctx.shadowColor = this.color + '0.3)';
+        ctx.arc(orb.x, orb.y, orb.radius, 0, Math.PI * 2);
+        ctx.fill();
+    });
+
+    bokeh.forEach(b => {
+        b.x += b.speedX;
+        b.y += b.speedY;
+        b.phase += b.pulse;
+        const currentOpacity = b.opacity * (0.7 + Math.sin(b.phase) * 0.3);
+
+        if (b.y < -b.radius * 2) {
+            b.y = canvas.height + b.radius;
+            b.x = Math.random() * canvas.width;
+        }
+
+        const grad = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, b.radius);
+        grad.addColorStop(0, `rgba(200, 109, 81, ${currentOpacity * 1.5})`);
+        grad.addColorStop(0.4, `rgba(200, 109, 81, ${currentOpacity})`);
+        grad.addColorStop(1, `rgba(200, 109, 81, 0)`);
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(b.x, b.y, b.radius, 0, Math.PI * 2);
+        ctx.fill();
+    });
+
+    sparkle.forEach(s => {
+        s.x += s.speedX;
+        s.y += s.speedY;
+        s.phase += s.speed;
+        s.opacity = s.maxOpacity * Math.abs(Math.sin(s.phase));
+
+        if (s.x < 0) s.x = canvas.width;
+        if (s.x > canvas.width) s.x = 0;
+        if (s.y < 0) s.y = canvas.height;
+        if (s.y > canvas.height) s.y = 0;
+
+        ctx.save();
+        ctx.globalAlpha = s.opacity;
+        ctx.fillStyle = '#C86D51';
+        ctx.shadowBlur = 15;
+        ctx.shadowColor = 'rgba(200, 109, 81, 0.5)';
+        ctx.beginPath();
+
+        for (let i = 0; i < 4; i++) {
+            const angle = (i * Math.PI) / 2;
+            const x1 = s.x + Math.cos(angle) * s.size;
+            const y1 = s.y + Math.sin(angle) * s.size;
+            if (i === 0) ctx.moveTo(x1, y1);
+            else ctx.lineTo(x1, y1);
+        }
+        ctx.closePath();
         ctx.fill();
         ctx.restore();
-    }
-}
-
-class FloatingRing {
-    constructor() {
-        this.reset();
-    }
-    reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 30 + 20;
-        this.speedX = (Math.random() - 0.5) * 0.3;
-        this.speedY = (Math.random() - 0.5) * 0.3;
-        this.opacity = Math.random() * 0.08 + 0.02;
-        this.rotation = Math.random() * Math.PI * 2;
-        this.rotSpeed = Math.random() * 0.005;
-    }
-    update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        this.rotation += this.rotSpeed;
-        if (this.x < -50 || this.x > canvas.width + 50 || this.y < -50 || this.y > canvas.height + 50) {
-            this.reset();
-        }
-    }
-    draw() {
-        ctx.save();
-        ctx.translate(this.x, this.y);
-        ctx.rotate(this.rotation);
-        ctx.beginPath();
-        ctx.arc(0, 0, this.size, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(200, 109, 81, ${this.opacity})`;
-        ctx.lineWidth = 1.5;
-        ctx.stroke();
-        ctx.restore();
-    }
-}
-
-for (let i = 0; i < 60; i++) particles.push(new Particle());
-for (let i = 0; i < 8; i++) particles.push(new FloatingRing());
-
-function drawConnections() {
-    for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-            if (particles[i] instanceof FloatingRing || particles[j] instanceof FloatingRing) continue;
-            const dx = particles[i].x - particles[j].x;
-            const dy = particles[i].y - particles[j].y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 120) {
-                ctx.beginPath();
-                ctx.moveTo(particles[i].x, particles[i].y);
-                ctx.lineTo(particles[j].x, particles[j].y);
-                ctx.strokeStyle = `rgba(200, 109, 81, ${0.06 * (1 - dist / 120)})`;
-                ctx.lineWidth = 0.5;
-                ctx.stroke();
-            }
-        }
-    }
-}
-
-function animateParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => {
-        p.update();
-        p.draw();
     });
-    drawConnections();
-    requestAnimationFrame(animateParticles);
+
+    requestAnimationFrame(animate);
 }
-animateParticles();
+animate();
