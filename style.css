@@ -1,9 +1,10 @@
 /* ===== Animated Background ===== */
 html {
     background: #FDFBF7;
+    overflow-x: hidden;
 }
 
-#bgCanvas {
+.animated-bg {
     position: fixed;
     top: 0;
     left: 0;
@@ -11,6 +12,110 @@ html {
     height: 100%;
     z-index: 0;
     pointer-events: none;
+    overflow: hidden;
+}
+
+.floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.15;
+    animation: floatOrb 20s ease-in-out infinite;
+}
+
+.floating-orb:nth-child(1) {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #C86D51, #D4846A);
+    top: 10%;
+    left: -10%;
+    animation-delay: 0s;
+    animation-duration: 25s;
+}
+
+.floating-orb:nth-child(2) {
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(135deg, #D4846A, #E8A88C);
+    top: 50%;
+    right: -10%;
+    animation-delay: -5s;
+    animation-duration: 22s;
+}
+
+.floating-orb:nth-child(3) {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #C86D51, #B55A3F);
+    bottom: 10%;
+    left: 30%;
+    animation-delay: -10s;
+    animation-duration: 28s;
+}
+
+.floating-orb:nth-child(4) {
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(135deg, #E8A88C, #D4846A);
+    top: 30%;
+    left: 50%;
+    animation-delay: -15s;
+    animation-duration: 20s;
+}
+
+.floating-orb:nth-child(5) {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #D4846A, #C86D51);
+    top: 70%;
+    left: 10%;
+    animation-delay: -8s;
+    animation-duration: 24s;
+}
+
+@keyframes floatOrb {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(50px, -50px) scale(1.1);
+    }
+    50% {
+        transform: translate(-30px, 30px) scale(0.95);
+    }
+    75% {
+        transform: translate(40px, 20px) scale(1.05);
+    }
+}
+
+.sparkle-dot {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #C86D51;
+    border-radius: 50%;
+    opacity: 0;
+    animation: sparkle 3s ease-in-out infinite;
+}
+
+.sparkle-dot:nth-child(6) { top: 20%; left: 15%; animation-delay: 0s; }
+.sparkle-dot:nth-child(7) { top: 40%; left: 80%; animation-delay: 0.5s; }
+.sparkle-dot:nth-child(8) { top: 60%; left: 25%; animation-delay: 1s; }
+.sparkle-dot:nth-child(9) { top: 80%; left: 70%; animation-delay: 1.5s; }
+.sparkle-dot:nth-child(10) { top: 30%; left: 60%; animation-delay: 2s; }
+.sparkle-dot:nth-child(11) { top: 70%; left: 45%; animation-delay: 0.3s; }
+.sparkle-dot:nth-child(12) { top: 15%; left: 55%; animation-delay: 0.8s; }
+.sparkle-dot:nth-child(13) { top: 85%; left: 35%; animation-delay: 1.3s; }
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
 }
 
 /* ===== Premium Variables ===== */
