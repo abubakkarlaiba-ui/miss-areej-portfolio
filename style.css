@@ -18,6 +18,10 @@ body { font-family: var(--font-sans); color: var(--text); background: var(--bg);
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; }
 
+/* Hide Vercel Toolbar */
+#__next, [data-vercel-chat], [class*="vercel"], iframe[src*="vercel"] { display: none !important; }
+VCNotification, VCWidget, [class*="vc-"] { display: none !important; }
+
 /* ===== Navbar ===== */
 .navbar {
     position: fixed;
